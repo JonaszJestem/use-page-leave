@@ -19,5 +19,5 @@ export const usePageLeave = () => {
     }
   }, [y, previousY]);
 
-  return { leavesPage };
+  return { leavesPage, setLeavesPage };
 };
