@@ -13,8 +13,9 @@ export const usePageLeave = () => {
     }
 
     const isOnTopOfTheScreen = y < TOP_OF_SCREEN_THRESHOLD;
+    const isCursorGoingUp = y < previousY;
 
-    if (isOnTopOfTheScreen) {
+    if (isCursorGoingUp && isOnTopOfTheScreen) {
       setLeavesPage(true);
     }
   }, [y, previousY]);
