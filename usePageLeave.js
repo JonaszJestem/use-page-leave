@@ -3,9 +3,9 @@ import useMousePosition from "./useMousePosition";
 
 const TOP_OF_SCREEN_THRESHOLD = 10;
 
-export const useShowBeforeLeave = () => {
+export const usePageLeave = () => {
   const { y, previousY } = useMousePosition();
-  const [isOpen, setOpen] = useState(false);
+  const [leavesPage, setLeavesPage] = useState(false);
 
   useEffect(() => {
     if (!y || !previousY) {
@@ -15,9 +15,9 @@ export const useShowBeforeLeave = () => {
     const isOnTopOfTheScreen = y < TOP_OF_SCREEN_THRESHOLD;
 
     if (isOnTopOfTheScreen) {
-      setOpen(true);
+      setLeavesPage(true);
     }
   }, [y, previousY]);
 
-  return { isOpen, setOpen };
+  return { leavesPage };
 };

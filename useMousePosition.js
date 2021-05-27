@@ -1,21 +1,14 @@
 import { useEffect, useState } from "react";
 
-type MousePosition = {
-  x: null | number;
-  y: null | number;
-  previousX: null | number;
-  previousY: null | number;
-};
-
 const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
+  const [mousePosition, setMousePosition] = useState({
     x: null,
     y: null,
     previousX: null,
     previousY: null,
   });
 
-  const updateMousePosition = (event: MouseEvent) => {
+  const updateMousePosition = (event) => {
     setMousePosition(({ x: prevX, y: prevY }) => ({
       x: event.clientX,
       y: event.clientY,
