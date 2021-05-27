@@ -1,1 +1,3 @@
-export * from "./usePageLeave";
+import { usePageLeave } from "./src/usePageLeave";
+
+export default usePageLeave;
